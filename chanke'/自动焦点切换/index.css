@@ -1,0 +1,40 @@
+body,ul,li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+
+.tab{
+    width: 150px;
+}
+.tab img{
+    width: 150px;
+}
+ .pointer{
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 152px;
+}
+img{
+    width: 152px;
+}
+.tabList{
+    position: absolute;
+    left: 158px;
+    top: 0;
+    width: 465px;
+    height: 262px;
+    overflow: hidden;
+}
+.tabList img{
+    position: absolute;
+    top: 0;
+    display: none;
+    width: 465px;
+}
+.tabList .show{
+    display: block;
+}

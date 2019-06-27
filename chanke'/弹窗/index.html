@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>弹窗</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .ad{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        float: left;
+
+    }
+    .close{ 
+        position: absolute;
+        right: 0;
+        z-index: 5;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        border: 1px solid rgba(0,0,0,0.2)
+    }
+    .bg{
+     
+        width: 300px;
+        height: 225px;
+    }
+    </style>
+</head>
+<body>
+    <iframe src="http://www.baidu.com" frameborder="0" width="100%" height="630px"></iframe>
+    <div class="ad">
+        <span class="close">x</span>
+        <img src="./img/3.jpg" alt="" class="bg">
+    </div>
+    <script>
+    var close = document.getElementsByClassName('close')[0];
+    var bg = document.getElementsByClassName('bg')[0];
+    var ad = document.getElementsByClassName('ad')[0];
+    var adHeight = 0;
+    var dHeight = 225;
+    close.onclick = function(){
+        var down = setInterval(downfunc,20);
+    }
+      
+    
+    var show = setInterval(showfunc,20);
+    
+    function showfunc(){
+        if(adHeight<225){
+            adHeight+=2;
+            
+        }else if(adHeight>225){
+            adHeight = 225;
+            clearInterval(show)
+        }
+        
+        ad.style.height = adHeight+ "px";
+    }
+    function downfunc(){
+        if(dHeight >0){
+            dHeight-=2;
+            ad.style.height = dHeight + "px";
+        }else if(dHeight < 0){
+            dHeight = 0;
+            ad.style.display = "none";
+            clearInterval(down);
+        }
+        
+    }
+    
+    
+       
+
+    </script>
+</body>
+
+</html>

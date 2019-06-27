@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>三级城市联动</title>
+</head>
+<body>
+
+    <select name="" id="province">
+
+    </select>
+    <select name="" id="city">
+
+    </select>
+    <select name="" id="district">
+
+    </select>
+    <script src="./三级城市/cc.js"></script>
+    <script>
+
+            var province = document.getElementById('province');
+            var city = document.getElementById('city');
+            var district = document.getElementById('district');
+
+        
+        for(var i = 0 ; i <provinceList.length; i++){
+            var option = new Option(provinceList[i].name,provinceList[i].name);
+            province.options.add(option);
+        }
+       changeProvince();
+       changeCity();
+       //change 事件， 改变option， 获取到改变的那个selectedIndex(索引值),
+        province.onchange = changeProvince;
+        function changeProvince(){ 
+          // console.log(province.selectedIndex)
+           //获取数据里面是的数组，处理数据
+           var cityAry = provinceList[province.selectedIndex].cityList;
+          // console.log(cityAry)
+          // 清空当前select的option
+          city.options.length = 0;
+           for(var i = 0 ; i <cityAry.length; i++){
+               //for循环遍历数组动态创建option，并插入到select里面
+            var option = new Option(cityAry[i].name,cityAry[i].name);
+            city.options.add(option);
+        }
+        }
+        city.onchange = changeCity;
+        function changeCity(){
+            //获取数据里面是的数组，处理数据
+            var districtAry = provinceList[province.selectedIndex].cityList[city.selectedIndex].districtList;
+            //console.log(districtAry)
+            district.options.length = 0;
+            for(var i = 0 ; i<districtAry.length; i++){
+                var option = new Option(districtAry[i],districtAry[i]);
+                district.options.add(option);
+               // console.log(option)
+            }
+        }
+    
+    </script>
+</body>
+</html>

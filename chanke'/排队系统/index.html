@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>排队系统</title>
+</head>
+<body>
+    <script>
+    //创建人
+    var ary = [];
+ 
+     var people = (function(){
+        var a = 1;
+        var n = 1;
+        return function(){
+        if(Math.random()>0.5){
+                return "V" + a++;
+            }else{
+                return "N" + n++;
+            }              
+        }
+    }) ();
+    
+
+
+    function aryList (person){
+        if(person[0] = "V"){
+            for(var i = 0 ; i <ary.length ; i++){
+             if(ary[i][0] == "N"){
+                 ary.splice(i,0,person)
+                 return
+             }   
+            }
+        }
+        ary.push(person)
+    }
+    for(var i = 0 ; i<6;i++){
+        aryList(people())
+    }
+
+    //叫号
+    setInterval(getOne, 3000);
+    function getOne(){
+        //柜台叫走一个
+          ary.shift();
+        // 叫号
+        var newP= people()
+        aryList(newP);
+        console.log(ary.toString())
+    }
+    </script>
+    
+</body>
+</html>

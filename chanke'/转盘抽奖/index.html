@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <style>
+        body,tr,td{
+            padding: 0;
+            margin: 0;
+        }
+    td{
+        width: 50px;
+        height: 40px;
+        text-align: center;
+        background-color: darkolivegreen;
+        border: 1px solid black;
+    }
+    .select{
+        background-color: #ff6700;
+    }
+    .start{
+        background-color: #ff6700;
+    }
+    </style>
+</head>
+<body>
+    <table class="list">
+        <tr>
+            <td class="select">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td></td>
+            <td class="start">开始</td>
+            <td></td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+        </tr>
+    </table>
+    <script>
+    var tdList = document.getElementsByClassName('list')[0].getElementsByTagName('td');
+    var start = document.getElementsByClassName('start')[0];
+    var tdId = 0;
+    var tdAry =[0,1,2,3,4,9,14,19,24,23,22,21,20,15,10,5];
+    
+     
+    start.onclick = function(){
+     runNum = 0;
+     maxNum = 16*3 + parseInt(Math.random()*16);
+     console.log(maxNum)
+     play = setInterval(playfunc, 200);
+      
+
+    }  
+        function playfunc(){
+        tdList[tdAry[tdId]].className = "";
+        tdId = tdId + 1 >= tdAry.length ? 0 : tdId + 1;
+        tdList[tdAry[tdId]].className = "select";
+        
+        runNum++;
+        if(runNum >= maxNum){
+           
+            clearInterval(play)
+            return;
+        }
+        if(runNum == 6){
+            clearInterval(play);
+            play = setInterval(playfunc,50);
+           
+        }
+        if(runNum + 6 == maxNum){
+            clearInterval(play);
+            play = setInterval(playfunc,200);
+            console.log(maxNum)
+        }
+    }
+    
+    </script>
+</body>
+</html>

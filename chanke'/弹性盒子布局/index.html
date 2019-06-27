@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>弹性盒子
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+      body,ul,li{
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          background: #e2e2e6;
+           
+         
+      }
+      nav{
+          height: 50px;
+          width: 100%;
+          background: #99999b;
+      }
+      nav .nav-list{
+        position: absolute;
+          right: 0;   
+          display: flex;
+          width: 400px;       
+      }
+      .nav-list li{           
+          flex-grow: 1;
+          width: 100px;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          background: linear-gradient(to right, #ccc 50%,#fff);                
+          cursor: pointer;
+      }
+      .nav-list li:hover{
+          color: #fff;
+      }
+           /*内容区*/
+           .wrapper{
+               display: flex;
+               width: 100%;
+               background: #e2e2e6;
+           } 
+           .right{
+               width: 200px;            
+               border: 1px solid red;
+               margin-top:20px; 
+               background: #fff;
+
+           }
+           .center{
+               width: 200px;
+               flex-grow: 1;
+               border: 1px solid red;
+               margin: 20px 20px 0 20px;
+               background: #fff;
+           }
+           .left{
+               margin-top:20px;
+               width: 200px;
+               border: 1px solid red;
+               background: #fff;
+           }
+           footer{
+               margin-top: 30px;
+           }
+         
+           p{
+           
+               height: 50px;
+               width: 100%;
+               line-height: 50px;
+               text-align: center;
+               background: #99999b;
+           }
+           a{
+               color: red;
+              
+               text-decoration: none;
+           }
+           
+ </style>
+</head>
+<body>
+  <nav>
+      <ul class="nav-list">
+          <li>巧克力</li>
+          <li>旺仔</li>
+          <li>花蝴蝶</li>
+          <li>坚果</li>
+          <li>糖果</li>
+      </ul>
+  </nav>
+  <div class="wrapper">
+      <div class="right">是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ我是righ</div>
+      <div class="center">我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center我是center</div>
+      <div class="left">我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是l我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是l我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是l我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left我是left</div>
+  </div>
+  <footer>
+      <p>好想吃东西，饿啊。。。。。<a href="http://www.taobao.com">(点击跳转)</a></p>
+  </footer>
+</body>
+</html>

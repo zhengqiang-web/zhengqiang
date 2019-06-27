@@ -1,0 +1,17 @@
+td{
+    width: 60px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #f60;
+    color: #fff;
+}
+.select{
+    background-color: #000;
+    color: #f60;
+}
+.start{
+    background-color: #000;
+    color: #f60;
+    cursor: pointer;
+}

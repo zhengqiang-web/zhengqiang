@@ -1,0 +1,22 @@
+
+
+.wrapper{
+position: absolute;
+right: 0;
+bottom: -400px;
+}
+img{
+    width: 400px;
+    height: 300px;
+}
+span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}

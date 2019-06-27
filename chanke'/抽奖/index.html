@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>抽奖</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <td class="select">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td></td>
+            <td class="start" id="start">开始</td>
+            <td></td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>12</td>
+            <td>11</td>
+            <td>10</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <script>
+    var tdList = document.getElementById('table').getElementsByTagName('td');
+    var arrList = [0,1,2,3,4,9,14,19,24,23,22,21,20,15,10,5]
+    var tdId = 0;
+    var start = document.getElementById('start');
+    var flag;
+
+    start.onclick = function(){
+        if(flag != true){
+            runNum = 0;
+            maxNum = 16*3 +  parseInt( Math.random()*16);
+           
+            run = setInterval(playFunc,200);  
+
+        }else{
+            flag = false;
+            clearInterval(run);
+        }
+       
+
+    }
+    function playFunc(){
+        tdList[arrList[tdId]].className = "";
+        tdId= tdId + 1 >= arrList.length ? 0 : tdId+1;
+        tdList[arrList[tdId]].className = "select";
+        runNum++
+        if(runNum == maxNum){
+            console.log('停止')
+            clearInterval(run)
+        }
+        if(runNum == 6){
+            console.log('加速')
+            clearInterval(run)
+            run = setInterval(playFunc,20);
+        }
+        if(runNum + 6 == maxNum){
+            console.log('减速')
+            clearInterval(run)
+            run = setInterval(playFunc,200);
+                    
+    }
+    }
+    
+    
+    </script>
+</body>
+</html>

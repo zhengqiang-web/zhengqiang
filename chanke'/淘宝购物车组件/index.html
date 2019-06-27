@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车组件</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper{
+            width: 84px;
+            height: 26px;
+            font-size: 20px;
+            margin: 100px auto; 
+        }        
+        .low,.add{
+            display: block;
+           float: left;
+            width: 20px;
+            height: 26px;
+            text-align: center;
+            line-height: 26px;           
+            background: rgba(0,0,0,0.5); 
+            cursor: pointer;   
+            color: #fff;    
+        }
+        .text{       
+            display: block;    
+            float: left; 
+            width: 40px;
+            height: 20px;
+            text-align: center;             
+        }
+        .wrapper .min{
+            background: rgba(0,0,0,0.3)
+        }
+
+
+    
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="low">-</div>
+        <input type="text" value="1" class="text">
+        <div class="add">+</div>
+    </div>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+        var  value = 1;
+        var max = 20;
+       var min = 1;
+    //    $('.wrapper').find('.low').click(function(){
+            
+    //         notIn();
+    //    }).end().find('.add').click(function(){
+             
+                    
+    //    })
+      
+       function notIn(){
+           if(value <= 1  ){
+               $('.low').addClass('min');
+           }else if(value >= 20 ) {
+               $('.add').addClass('min'); 
+            
+           }else{
+           $('.min').removeClass('min');
+           }
+          
+       }
+       
+       function count(num){
+            value = parseInt($('.text').val()) + num ;
+           if(value >= max){
+                 value = max; 
+                 
+                           
+           }else if(value >= min && value <= max){
+
+           }else{
+               value = 1;
+              
+           }
+           $('.text').val(value);      
+       }  
+       $('.text').on('input',function(){
+           value = parseInt(this.value);
+           count(0);
+            notIn();
+       })  
+       
+       $('.low').add('.add').click(function(){
+           if($(this).hasClass('low')){
+            count(-1);
+           }else{
+            count(1); 
+           }
+           notIn();
+       })
+       notIn();
+    </script>
+</body>
+</html>

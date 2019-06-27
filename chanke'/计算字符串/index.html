@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>计算字符串</title>
+</head>
+<body>
+    <script>
+    
+     var str = "sajhfaiklemqn,mklvcioidsaf";
+    
+    
+     
+     function search(str){
+        var key;
+        var obj = {};
+        for( var i = 0 ; i <str.length;i++){
+            key = str[i];
+            if(obj[key]){
+                obj[key]++;
+            }else{
+                obj[key] = 1;
+                
+            }
+            var maxNum = -1;
+        var maxKey; 
+    for(key in obj){
+        if(maxNum<obj[key]){
+
+            maxNum = obj[key];
+            maxKey = key;
+        }
+    }
+        }
+        console.log('maxKey:' + maxKey +' '+ 'maxNum:' + maxNum)
+   
+     }
+     
+    
+      
+     search(str)
+  
+    
+    </script>
+</body>
+</html>

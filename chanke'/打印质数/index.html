@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>打印质数</title>
+</head>
+<body>
+    <script>
+    //质数是只能被1 和自己整除的数
+
+
+    function number(num){
+      if(num<= 1 || num%2 == 0){
+          if(num == 2){
+              return true;
+          }
+          return false;
+      }
+        var n = 3; 
+        while(n < num){
+         
+            if(num%n == 0){
+                return false;
+            }
+            n+=2
+ 
+        }
+        
+        return true;
+    }
+    for( var i = 1 ;i <10001; i++){
+        
+        if(number(i)){
+            console.log(i)  
+        }
+    }
+    
+    </script>
+</body>
+</html>

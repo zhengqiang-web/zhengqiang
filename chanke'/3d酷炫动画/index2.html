@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>3d酷炫动画</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .wrapper{
+        perspective: 600px;
+        
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        margin: 200px auto;
+        transform-style: preserve-3d;
+        animation: move 5s linear infinite reverse;
+    }
+    .box .item{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        font-size: 30px;
+
+    
+    }
+     .box .item:nth-child(1){
+         background: red;
+        transform: rotatex(60deg) translateZ(200px);
+    }
+    .box .item:nth-child(2){
+        background:chocolate;
+        transform: rotatex(120deg) translateZ(200px);
+    }
+    .box .item:nth-child(3){
+        background: brown;
+        transform: rotatex(180deg) translateZ(200px);
+    }
+    .box .item:nth-child(4){
+        background: blueviolet;
+        transform: rotatex(240deg) translateZ(200px);
+    }
+    .box .item:nth-child(5){
+        background: blanchedalmond;
+        transform: rotatex(300deg) translateZ(200px);
+    }
+    .box .item:nth-child(6){
+        background: blue;
+        transform: rotatex(360deg) translateZ(200px);
+    }
+    @keyframes move{
+        0%{
+           transform:  rotateY(90deg) rotateZ(60deg) rotatex(0);
+        }
+        100%{
+            transform: rotateY(90deg) rotateZ(60deg) rotatex(360deg);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </div>
+    </div>
+</body>
+</html>

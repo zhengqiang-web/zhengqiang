@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+    <script>
+   
+   
+        Array.prototype.district = function(){
+            var ret = [];
+            for( var i = 0 ; i <this.length;i++){
+                for( var j = i+1;j<this.length;){
+                    if(this[i] === this[j]){
+                   ret.push(this.splice(j,1)[0])  
+                    }else{
+                        j++;
+                    }
+                }
+            }
+            return ret;
+        }
+    </script>
+</body>
+</html>

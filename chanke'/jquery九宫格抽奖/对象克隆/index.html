@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>对象深度克隆</title>
+</head>
+<body>
+    <script>
+    var obj = {
+        a:1,
+        b:false,
+        c:{
+            a:2,b:true,c:{a:3,b:false}
+        },
+        d:[1,2,3,[1,2,3]]
+    };
+    var a = clone(obj);
+    function clone(obj){
+        if(obj instanceof Array){
+            var ary = [];
+            for( var i =0 ; i<obj.length;i++){
+                //递归函数思想，遍历数组用for循环，遍历对象用for in 
+                ary[i] =  clone(obj[i]);
+            }
+            return ary;
+        }
+        if(obj instanceof Object){
+            var newObj = {};
+            for(key in obj){
+                //key 是属性，进行遍历
+                newObj[key] = clone(obj[key]);
+            }
+            return newObj;
+        }
+
+        return obj;
+    }
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义求和</title>
+</head>
+<body>
+    <script>
+    var num = 0;
+       function sum(){
+        for(var i = 0 ; i <arguments.length;i++){
+      
+            num += parseFloat(arguments[i]) || 0;
+            
+        }
+       
+       console.log(num.toFixed(2)) ;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>汉诺塔
+    </title>
+</head>
+<body>
+    <script>
+        //function hanoi(数量,启动,目标,辅助)
+    function hanoi(num,a,c,b){
+        if(num == 1){
+            console.log(a + '->' + c)
+        }else if(num > 1){
+            hanoi(num - 1,a,b,c);
+            console.log(a + '->' + c)
+            console.log(b + '->' + c)
+        }
+    }
+    </script>
+</body>
+</html>
