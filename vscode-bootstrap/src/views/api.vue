@@ -1,20 +1,57 @@
 <template>
-    <div class="api">
-    <h1>This is an api page</h1>
+  <div class="api">
+    <div class="wrapper container">
+      <div class="right">
+        <app-menu></app-menu>
+      </div>
+      <div class="center">
+        <app-content></app-content>
+      </div>
+      <div class="left">
+        <app-anchor></app-anchor>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
+import slidermenu from "../components/slidermenu";
+import anchor from "../components/anchor";
+import content from "../components/content";
 export default {
-    
+      name: "Extentions",
+  components: {
+    "app-menu": slidermenu,
+    "app-anchor": anchor,
+    "app-content": content
+  },
+  methods: {}
 }
 </script>
 
 <style scoped>
-.api{
-    height: 2400px;
+.api {
+  margin-top: 35px;
+  height: 2400px;
 }
-h1{
-    margin-top: 120px
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+.right {
+  width: 200px;
+  margin-top: 20px;
+  background: #fff;
+}
+.center {
+  width: 200px;
+  flex-grow: 1;
+  padding: 0 50px;
+  margin: 20px 20px 0 20px;
+  background: #fff;
+}
+.left {
+  margin-top: 20px;
+  width: 200px;
+  background: #fff;
 }
 </style>
