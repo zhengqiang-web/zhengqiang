@@ -1,4 +1,4 @@
-# vs-bootstrap
+# vscode-bootstrap
 
 ## Project setup
 ```
